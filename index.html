@@ -102,7 +102,10 @@
                         </div>
                     </li>
                     <li login-button class="nav-item">
-                        <a class="nav-link btn-primary rounded text-white fw-bold" href="./login.html">Login</a>
+                        <a class="btn btn-primary rounded text-white fw-bold" href="./login.html">Login</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a signup-button class="btn btn-outline-dark rounded fw-bold" href="./signup.html">Cadastre-se</a>
                     </li>
                 </ul>
             </div>
@@ -199,12 +202,14 @@
         const logged = localStorage["logged"];
         const user_menu = document.querySelector("[user-dropdown]");
         const login_button = document.querySelector("[login-button]");
+        const signup_button = document.querySelector("[signup-button]");
         const user = JSON.parse(localStorage["pettop-userinfo"]);
 
         if (logged == "true") {
             user_menu.classList.remove("visually-hidden");
             user_menu.querySelector("a").innerText = `${user.user}`;
             login_button.classList.add("visually-hidden");
+            signup_button.classList.add("visually-hidden");
         }
 
         const logout = () => {

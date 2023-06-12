@@ -80,6 +80,6 @@
 }
 .btn-accent:hover{
     color: white !important;
-    background: #6f93b4 !important;
+    background: var(--color-accent) !important;
 }
 
