@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat&family=Quicksand&display=swap');
+
+
+:root{
+
+    /* Paleta de cores pra gente usar no projeto */
+
+    --color-background: #ededed;
+    --color-primary:#e68ea1;
+    --color-secondary: #dedede;
+    --color-accent: #480f38;
+    
+    --border-primary:#b46f7e;
+
+    --font-primary:'Quicksand', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;;
+    --font-accent: 'Courgette', cursive;
+}
+
+*{
+    font-family: var(--font-secondary) !important;
+}
+
+
+/* ---------------------------------- Backround */
+
+.bg-primary{
+    background: var(--color-primary) !important;
+}
+.bg-secondary{
+    background: var(--color-secondary) !important;
+}
+.bg-accent{
+    background: var(--color-accent);
+}
+.bg-default{
+    background: var(--color-background);
+}
+
+/* ---------------------------------- Text */
+
+.text-primary{
+    color: var(--color-primary) !important;
+}
+.text-secondary{
+    color: var(--color-secondary) !important;
+}
+.text-accent{
+    color: var(--color-accent);
+}
+
+.font-primary{
+    font-family: var(--font-primary) !important;
+}
+.font-secondary{
+    font-family: var(--font-secondary) !important;
+}
+.font-accent{
+    font-family: var(--font-accent) !important;
+}
+
+/* ---------------------------------- Buttons */
+
+.btn-primary{
+    background: var(--color-primary) !important;
+    border: 1px solid var(--border-primary) !important;
+}
+.btn-primary:hover{
+    background: var(--border-primary) !important;
+}
+
+.btn-secondary{
+    background: var(--color-secondary) !important;
+}

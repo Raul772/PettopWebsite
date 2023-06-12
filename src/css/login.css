@@ -1,0 +1,9 @@
+main{
+    background: url(../media/login-background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.background-75{
+    opacity: 75%;
+}
