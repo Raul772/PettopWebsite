@@ -88,11 +88,10 @@
 
                             <label for="email-input" class="form-label mt-4">Email</label>
                             <input type="email" class="form-control" name="email" id="email-input"
-                                placeholder="examplo@pettop.com" required>
+                                placeholder="exemplo@pettop.com" required>
 
                             <label for="password-input" class="form-label mt-4">Senha</label>
-                            <input type="password" class="form-control" name="password" id="password-input"
-                                placeholder="*********" required>
+                            <input type="password" class="form-control" name="password" id="password-input" placeholder="*********" required>
 
                             <button type="button" onclick="validate();" class="btn btn-primary my-3">Cadastrar</button>
                         </form>
@@ -102,13 +101,12 @@
         </section>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+        <!-- <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
             Launch
-        </button>
+        </button> -->
 
         <!-- Modal -->
-        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
-            aria-hidden="true">
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -119,22 +117,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            var modalId = document.getElementById('modalId');
-
-            modalId.addEventListener('show.bs.modal', function (event) {
-                // Button that triggered the modal
-                let button = event.relatedTarget;
-                // Extract info from data-bs-* attributes
-                let recipient = button.getAttribute('data-bs-whatever');
-
-                // Use above variables to manipulate the DOM
-            });
-        </script>
-
-
-
 
     </main>
 
