@@ -73,3 +73,13 @@
 .btn-secondary{
     background: var(--color-secondary) !important;
 }
+
+.btn-accent{
+    color: white;
+    background: var(--color-accent) !important;
+}
+.btn-accent:hover{
+    color: white !important;
+    background: #6f93b4 !important;
+}
+
