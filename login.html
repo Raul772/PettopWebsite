@@ -24,7 +24,7 @@
             <div class="row h-100 justify-content-start">
                 <div class="col-md-4 d-flex flex-column justify-content-center align-items-center bg-default">
                     <div id="login-tray" class="bg-default background-75"></div>
-                    <h1 class="h3 font-primary">
+                    <h1 class="h3">
                         <svg xmlns="http://www.w3.org/2000/svg" height="100px" width="140px" viewBox="0 0 424.75 133.9">
                             <defs>
                                 <style>
@@ -56,15 +56,6 @@
                                     transform="translate(-746.23 -499.53)" />
                                 <path
                                     d="M925.42,505.69v24.44c5.79,0,11.06.26,16.28-.09,4.27-.28,5.87.9,5.81,5.47-.17,13.59,0,13.53-13.67,13.53-9.59,0-8.26-1.3-8.45,8.55,0,2.66-.12,5.33,0,8,.34,11.39,6.76,19.29,17.86,21.47,3.12.61,4.26,1.78,4.1,4.87-.21,3.82-.17,7.67-.06,11.5.1,3.42-1.36,4.2-4.61,3.77-20.44-2.71-36.59-19.8-37.14-40.25-.44-16.82-.24-33.66-.1-50.49,0-1.6,1.24-4.09,2.55-4.64C913.29,509.58,918.87,507.92,925.42,505.69Z"
-                                    transform="translate(-746.23 -499.53)" />
-                                <path class="cls-1"
-                                    d="M767,533.84a102.26,102.26,0,0,1,.14-10.94c.14-1.25,1.84-3.3,2.87-3.33a142.8,142.8,0,0,1,18.39.47c7.56.8,11.46,5.45,11.84,13,.42,8.21-3,13.94-10.46,15.18-6.64,1.11-13.53.82-20.31.8-.85,0-2.33-2-2.42-3.22-.3-4-.11-8-.11-11.94Z"
-                                    transform="translate(-746.23 -499.53)" />
-                                <path class="cls-1"
-                                    d="M1150.63,569.09a18.75,18.75,0,0,1-19.69,17.76c-9.69-.31-18.21-9.53-17.8-19.25.41-9.92,9.27-18.1,19.29-17.82A18.78,18.78,0,0,1,1150.63,569.09Z"
-                                    transform="translate(-746.23 -499.53)" />
-                                <path class="cls-1"
-                                    d="M844.71,558.57c1.84-5.46,7.29-8.79,14.57-9.13s13.89,3.22,16.42,9.13Z"
                                     transform="translate(-746.23 -499.53)" />
                             </g>
                             <g id="Camada_2" data-name="Camada 2">
@@ -112,13 +103,38 @@
         const form = document.querySelector("form");
         const email = document.querySelector("#email-input");
         const password = document.querySelector("#password-input");
+        const validationMessage = document.querySelector("[validation-message]");
 
         const validate = () => {
-            if (form.checkValidity()){
-                window.location.href = "./index.html";
+
+
+
+            if (form.checkValidity()) {
+
+                const stored_User_Info = localStorage["pettop-userinfo"] &&
+                    JSON.parse(localStorage["pettop-userinfo"]);
+
+
+                if (stored_User_Info.email == email.value
+                    && stored_User_Info.password == password.value) {
+
+                    localStorage["logged"] = "true";
+                    window.location.href = "./index.html";
+                } else {
+                    validationMessage
+                        .classList
+                        .remove("visually-hidden");
+
+                    validationMessage.innerText = "* Verifique Email e Senha.";
+                }
+
+
+
             }
-            else{
-                document.querySelector("[validation-message]")
+            else {
+                validationMessage.innerText = "* Preencha corretamente os campos.";
+
+                validationMessage
                     .classList
                     .remove("visually-hidden");
 
@@ -130,8 +146,7 @@
 
     </script>
 
-
-
+    <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
