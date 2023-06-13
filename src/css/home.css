@@ -17,3 +17,13 @@ img{
     left: 10px;
     z-index: 0;
 }
+main > section > *{
+    z-index: 2;
+}
+
+.patinhas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}

@@ -114,8 +114,8 @@
 
     <main class="bg-default">
         <section class="container vh-100 p-5 d-flex justify-content-center align-items-center">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-md-5">
+            <div class="row justify-content-center align-items-center py-3">
+                <div class="col-md-5 mb-2">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" height="100px" width="50%" viewBox="0 0 424.75 133.9">
                             <defs>
@@ -173,11 +173,14 @@
                     <!-- <p>A PetTop é um PetShop que se preocupa não só com a sua experiência mas também com a do seu Pet!</p> -->
                     <a class="btn btn-accent" href="#servicos" role="button">Ver Serviços</a>
                 </div>
-                <div class="col-md-5 ">
+                <div class="col-md-5">
                     <figure class="img-frame">
                         <img class="img-fluid" src="src/media/index-header.jpg" alt="Cachorro e gato.">
                     </figure>
                 </div>
+            </div>
+            <div class="patinhas">
+                <canvas id="patinhas-canvas"></canvas>
             </div>
         </section>
 
@@ -216,10 +219,9 @@
             localStorage["logged"] = "false";
             window.location.reload();
         }
-
-
     </script>
 
+    <script src="src/js/patinhas.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
