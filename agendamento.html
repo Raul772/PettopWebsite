@@ -224,7 +224,7 @@
 		const user_menu = document.querySelector("[user-dropdown]");
 		const login_button = document.querySelector("[login-button]");
 		const signup_button = document.querySelector("[signup-button]");
-		const user = JSON.parse(localStorage["pettop-userinfo"]);
+		const user = localStorage["peetop-userinfo"] && JSON.parse(localStorage["pettop-userinfo"]);
 
 		if (logged == "true") {
 			user_menu.classList.remove("visually-hidden");
