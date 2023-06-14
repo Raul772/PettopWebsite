@@ -2,7 +2,6 @@ const numeroPatinhas = 10;
 const color = '#dedede';
 
 const canvas = document.getElementById("patinhas-canvas");
-console.log(canvas);
 
 const context = canvas.getContext('2d');
 

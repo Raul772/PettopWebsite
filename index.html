@@ -200,7 +200,7 @@
                         <h3 class="font-primary fw-bold">Vacinação</h3>
                     </div>
                     <p class="">Cuide do que te faz bem! Mantenha seu bichinho sempre saudável e protegido!</p>
-                    <a class="btn btn-accent" href="agendamento.html?v=vacinacao" role="button">Agendar</a>
+                    <span class="btn btn-accent" href="agendamento.html?v=vacinacao" role="button" require-login>Agendar</span>
                 </div>
                 <div class="col-md-3">
                     <figure class="img-frame">
@@ -214,7 +214,7 @@
                         <h3 class="font-primary fw-bold">Banho</h3>
                     </div>
                     <p class="">Uma boa higiene é muito importante, traga seu bichinho e leve-o limpinho e cheiroso!</p>
-                    <a class="btn btn-accent" href="agendamento.html?v=banho" role="button">Agendar</a>
+                    <span class="btn btn-accent" href="agendamento.html?v=banho" role="button" require-login>Agendar</span>
                 </div>
                 <div class="col-md-3">
                     <figure class="img-frame">
@@ -228,7 +228,7 @@
                         <h3 class="font-primary fw-bold">Grooming</h3>
                     </div>
                     <p class="">A aparência também é importante né? Vamos cuidar para realçar a beleza e a fofura do seu amiguinho!</p>
-                    <a class="btn btn-accent" href="agendamento.html?v=grooming" role="button">Agendar</a>
+                    <span class="btn btn-accent" href="agendamento.html?v=grooming" role="button" require-login>Agendar</span>
                 </div>
                 <div class="col-md-3">
                     <figure class="img-frame">
@@ -242,13 +242,13 @@
 
 
     <script>
-        const logged = localStorage["logged"];
+        const logged = localStorage["logged"] === "true";
         const user_menu = document.querySelector("[user-dropdown]");
         const login_button = document.querySelector("[login-button]");
         const signup_button = document.querySelector("[signup-button]");
-        const user = JSON.parse(localStorage["pettop-userinfo"]);
+        const user = localStorage["pettop-userinfo"] && JSON.parse(localStorage["pettop-userinfo"]);
 
-        if (logged == "true") {
+        if (logged) {
             user_menu.classList.remove("visually-hidden");
             user_menu.querySelector("a").innerText = `${user.user}`;
             login_button.classList.add("visually-hidden");
@@ -259,6 +259,17 @@
             localStorage["logged"] = "false";
             window.location.reload();
         }
+
+        const login_Required_Buttons = document.querySelectorAll("[require-login]");
+
+        login_Required_Buttons.forEach(b => {
+            b.addEventListener("click", () => {
+                window.location.href = logged ? b.getAttribute("href") : "./login.html";
+            })
+        });
+
+
+
     </script>
 
     <script src="src/js/patinhas.js"></script>
