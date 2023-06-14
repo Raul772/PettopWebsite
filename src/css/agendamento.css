@@ -1,0 +1,13 @@
+.clickable-day {
+  cursor: pointer;
+}
+
+.card {
+  margin-top: 80px;
+  margin-right: 50px;
+}
+
+.selected-day {
+  background-color: rgb(175, 31, 31);
+  color: white;
+}
