@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetTop - Login</title>
+    <link rel="shortcut icon" href="./src/media/paw.png" type="image/png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -97,51 +98,7 @@
         </section>
     </main>
 
-
-    <script>
-        const form = document.querySelector("form");
-        const email = document.querySelector("#email-input");
-        const password = document.querySelector("#password-input");
-        const validationMessage = document.querySelector("[validation-message]");
-
-        const validate = () => {
-
-
-
-            if (form.checkValidity()) {
-
-                const stored_User_Info = localStorage["pettop-userinfo"] &&
-                    JSON.parse(localStorage["pettop-userinfo"]);
-
-
-                if (stored_User_Info.email == email.value
-                    && stored_User_Info.password == password.value) {
-
-                    localStorage["logged"] = "true";
-                    window.location.href = "./index.html";
-                } else {
-                    validationMessage
-                        .classList
-                        .remove("visually-hidden");
-
-                    validationMessage.innerText = "* Verifique Email e Senha.";
-                    email.style.border = "1px solid red";
-                    password.style.border = "1px solid red";
-                }
-            }
-            else {
-                validationMessage.innerText = "* Preencha corretamente os campos.";
-
-                validationMessage
-                    .classList
-                    .remove("visually-hidden");
-
-                email.style.border = "1px solid red";
-                password.style.border = "1px solid red";
-            }
-        }
-
-    </script>
+    <script src="./src/js/login.js"></script>
 
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

@@ -2,15 +2,17 @@
 <html lang="pt-BR">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PetTop - Agendamento</title>
+	<link rel="shortcut icon" href="./src/media/paw.png" type="image/png">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-	<title>PetTop - Agendamento</title>
-	<link rel="stylesheet" href="./src/css/global.css">
-	<link rel="stylesheet" href="./src/css/agendamento.css">
+	<link rel="stylesheet" href="./src/css/global.css" />
+	<link rel="stylesheet" href="./src/css/agendamento.css" />
 
 	<script>
 		localStorage["logged"] == false ? window.stop() : {};
@@ -18,7 +20,6 @@
 </head>
 
 <body>
-
 	<nav class="navbar w-100 sticky-top navbar-expand-sm navbar-light bg-default">
 		<div class="container">
 			<a class="navbar-brand" href="#">
@@ -113,7 +114,6 @@
 	</nav>
 
 	<main class="bg-default">
-
 		<section class="container vh-100 d-flex flex-column align-items-center">
 			<h2 class="font-accent">Agendamento</h2>
 			<div class="row py-4">
@@ -186,7 +186,6 @@
 				</div>
 			</div>
 
-
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-6">
@@ -205,12 +204,13 @@
 								</select>
 							</div>
 
-							<button type="submit" class="btn btn-primary">Agendar</button>
+							<button type="submit" class="btn btn-primary">
+								Agendar
+							</button>
 						</form>
 					</div>
 				</div>
 			</div>
-
 		</section>
 	</main>
 
@@ -221,39 +221,8 @@
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 		crossorigin="anonymous"></script>
 
+	<script src="./src/js/agendamento.js"></script>
 
-	<script>
-
-		const logged = localStorage["logged"] === "true";
-		const user_menu = document.querySelector("[user-dropdown]");
-		const login_button = document.querySelector("[login-button]");
-		const signup_button = document.querySelector("[signup-button]");
-		const user = localStorage["pettop-userinfo"] && JSON.parse(localStorage["pettop-userinfo"]);
-
-		if (logged) {
-			user_menu.classList.remove("visually-hidden");
-			user_menu.querySelector("a").innerText = `${user.user}`;
-			login_button.classList.add("visually-hidden");
-			signup_button.classList.add("visually-hidden");
-		} else {
-			window.location.href = "./login.html";
-		}
-
-		const logout = () => {
-			localStorage["logged"] = "false";
-			window.location.href = "./index.html";
-		}
-
-
-
-		const clickableDays = document.querySelectorAll('.clickable-day');
-		clickableDays.forEach(day => {
-			day.addEventListener('click', () => {
-				clickableDays.forEach(d => d.classList.remove('selected-day'));
-				day.classList.add('selected-day');
-			});
-		});
-	</script>
 </body>
 
 </html>
