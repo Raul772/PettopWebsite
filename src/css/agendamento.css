@@ -1,13 +1,17 @@
 .clickable-day {
-  cursor: pointer;
+	cursor: pointer;
 }
 
-.card {
-  margin-top: 80px;
-  margin-right: 50px;
+.clickable-day:hover {
+	background-color: var(--color-secondary);
 }
+
+/* .card {
+	margin-top: 80px;
+	margin-right: 50px;
+} */
 
 .selected-day {
-  background-color: rgb(175, 31, 31);
-  color: white;
+	background-color: var(--color-accent) !important;
+	color: white !important;
 }
