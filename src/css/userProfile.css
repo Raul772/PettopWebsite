@@ -1,0 +1,13 @@
+
+.profile-container-img {
+    width: 450px;
+    height: 450px;
+}
+
+.p-img{
+    border-bottom: solid 0.5px var(--color-primary);
+}
+
+.main .container {
+    border: none;
+}
