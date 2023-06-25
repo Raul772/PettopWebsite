@@ -6,11 +6,6 @@
 	background-color: var(--color-secondary);
 }
 
-/* .card {
-	margin-top: 80px;
-	margin-right: 50px;
-} */
-
 .selected-day {
 	background-color: var(--color-accent) !important;
 	color: white !important;
