@@ -17,6 +17,10 @@ class Pet(PetBase):
 
 class UserBase(BaseModel):
     email: str
+    nome: str
+    cpf: str
+    endereco: str
+    telefone: str
 
 
 class UserCreate(UserBase):

@@ -12,6 +12,10 @@ usersRouter = APIRouter(prefix="/users", tags=["Users"])
 async def get_all(db:Session=Depends(get_db)):
     return UserService.get_users(db=db)
 
+@usersRouter.post("/cadastro", status_code=status.HTTP_200_OK)
+async def create(data:UserCreate ,db:Session=Depends(get_db)):
+    return UserService.create_user(db=db, user=data)
+
 @usersRouter.get("/{id}", status_code=status.HTTP_200_OK)
 async def get_one(id:int ,db:Session=Depends(get_db)):
     return UserService.get_user(db=db, id=id)

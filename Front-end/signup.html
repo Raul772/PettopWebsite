@@ -82,9 +82,9 @@
                     <p class="pb-2 font-accent text-center">Cadastre-se</p>
                     <p validation-message class="text-danger visually-hidden">* Preencha corretamente os campos</p>
                     <div class="">
-                        <form action="">
+                        <form action="" method="post">
                             <label for="user-input" class="form-label">Usuário</label>
-                            <input type="text" class="form-control" name="user" id="user-input" placeholder="Fulano"
+                            <input type="text" class="form-control" name="nome" id="user-input" placeholder="Fulano"
                                 pattern="[A-Za-z]{1,10}" required>
 
                             <label for="email-input" class="form-label mt-4">Email</label>
@@ -94,7 +94,7 @@
                             <label for="password-input" class="form-label mt-4">Senha</label>
                             <input type="password" class="form-control" name="password" id="password-input" placeholder="*********" required>
 
-                            <button type="button" onclick="validate();" class="btn btn-primary my-3">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary my-3">Cadastrar</button>
                         </form>
                     </div>
                 </div>
