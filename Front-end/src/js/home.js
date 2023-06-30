@@ -3,18 +3,19 @@ const user_menu = document.querySelector("[user-dropdown]");
 const login_button = document.querySelector("[login-button]");
 const signup_button = document.querySelector("[signup-button]");
 const user =
-    localStorage["pettop-userinfo"] &&
-    JSON.parse(localStorage["pettop-userinfo"]);
+    localStorage["loggedUser"] &&
+    JSON.parse(localStorage["loggedUser"]);
 
 if (logged) {
     user_menu.classList.remove("visually-hidden");
-    user_menu.querySelector("a").innerText = `${user.user}`;
+    user_menu.querySelector("a").innerText = `${user.nome}`;
     login_button.classList.add("visually-hidden");
     signup_button.classList.add("visually-hidden");
 }
 
 const logout = () => {
     localStorage["logged"] = "false";
+    localStorage["loggedUser"] = null;
     window.location.reload();
 };
 

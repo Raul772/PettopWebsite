@@ -16,6 +16,11 @@ async def get_all(db:Session=Depends(get_db)):
 async def create(data:UserCreate ,db:Session=Depends(get_db)):
     return UserService.create_user(db=db, user=data)
 
-@usersRouter.get("/{id}", status_code=status.HTTP_200_OK)
-async def get_one(id:int ,db:Session=Depends(get_db)):
-    return UserService.get_user(db=db, id=id)
+@usersRouter.get("/{key}", status_code=status.HTTP_200_OK)
+async def get_one(key ,db:Session=Depends(get_db)):
+
+    if key == int:
+        return UserService.get_user(db=db, user_id=id)
+    else:
+        return UserService.get_user(db=db, user_email=key)
+

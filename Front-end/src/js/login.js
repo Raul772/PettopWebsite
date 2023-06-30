@@ -3,16 +3,20 @@ const email = document.querySelector("#email-input");
 const password = document.querySelector("#password-input");
 const validationMessage = document.querySelector("[validation-message]");
 
-const validate = () => {
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
     if (form.checkValidity()) {
-        const stored_User_Info =
-            localStorage["pettop-userinfo"] &&
-            JSON.parse(localStorage["pettop-userinfo"]);
+        const stored_User = await fetch(
+            `http://127.0.0.1:8000/users/${email.value}`
+        );
+        const stored_User_Data = await stored_User.json();
 
         if (
-            stored_User_Info.email == email.value &&
-            stored_User_Info.password == password.value
+            stored_User_Data.email == email.value &&
+            stored_User_Data.hashed_password == password.value.concat("notreallyhashed")
         ) {
+            localStorage["loggedUser"] = JSON.stringify(stored_User_Data);
             localStorage["logged"] = "true";
             window.location.href = "./index.html";
         } else {
@@ -30,4 +34,4 @@ const validate = () => {
         email.style.border = "1px solid red";
         password.style.border = "1px solid red";
     }
-};
+});
