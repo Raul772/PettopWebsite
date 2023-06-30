@@ -1,12 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status
+
+from config import Base, engine
+from models import *
+
+from users.controller import usersRouter
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello, World!"}
+Base.metadata.create_all(bind=engine)
 
 @app.get("/")
-async def root():
+async def getHome():
     return {"message": "Hello, World!"}
+
+app.include_router(usersRouter)
