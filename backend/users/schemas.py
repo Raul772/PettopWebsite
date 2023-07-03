@@ -1,13 +1,21 @@
 from pydantic import BaseModel
+from typing import Optional
 
 from pets.schemas import Pet
 
 class UserBase(BaseModel):
     email: str
     nome: str
-    cpf: str
-    endereco: str
-    telefone: str
+    cpf: Optional[str] = "Não Informado"
+    endereco: Optional[str] = "Não Informado"
+    telefone: Optional[str] = "Não Informado"
+
+class UserUpdate(BaseModel):
+    email: Optional[str]
+    nome: Optional[str]
+    cpf: Optional[str]
+    endereco: Optional[str]
+    telefone: Optional[str]
 
 
 class UserCreate(UserBase):

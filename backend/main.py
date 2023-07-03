@@ -7,6 +7,7 @@ from models import *
 from users.controller import usersRouter
 from pets.controller import petsRouter
 from servicos.controller import servicosRouter
+from agendamentos.controller import agendamentoRouter
 
 app = FastAPI()
 
@@ -28,3 +29,4 @@ async def getHome():
 app.include_router(usersRouter)
 app.include_router(petsRouter)
 app.include_router(servicosRouter)
+app.include_router(agendamentoRouter)
