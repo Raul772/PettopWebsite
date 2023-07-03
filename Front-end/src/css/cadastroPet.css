@@ -1,0 +1,24 @@
+main{
+    background: url("../media/hamster.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    
+}
+
+.form-signin {
+    margin-top: -200px;
+}
+  
+
+.form-group {
+    margin: 10px;
+}
+
+body {
+    overflow: hidden;
+}  
+
+.btn {
+    margin: 10px;
+}
+  
