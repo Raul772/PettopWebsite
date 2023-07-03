@@ -5,6 +5,8 @@ from config import Base, engine
 from models import *
 
 from users.controller import usersRouter
+from pets.controller import petsRouter
+from servicos.controller import servicosRouter
 
 app = FastAPI()
 
@@ -24,3 +26,5 @@ async def getHome():
     return {"message": "Hello, World!"}
 
 app.include_router(usersRouter)
+app.include_router(petsRouter)
+app.include_router(servicosRouter)

@@ -1,19 +1,6 @@
 from pydantic import BaseModel
 
-class PetBase(BaseModel):
-    nome: str
-    raca: str
-
-class PetCreate(PetBase):
-    pass
-
-class Pet(PetBase):
-    id: int
-    dono_id: int
-
-    class Config:
-        orm_mode = True
-
+from pets.schemas import Pet
 
 class UserBase(BaseModel):
     email: str
