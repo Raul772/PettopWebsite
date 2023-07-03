@@ -38,7 +38,7 @@ class Servico(Base):
     valor = Column(Float)
     descricao = Column(String)
 
-
+ 
 class Agendamento(Base):
     __tablename__ = "agendamentos"
 

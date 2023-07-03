@@ -1,26 +1,3 @@
-
-img{
-    position: relative;
-    z-index: 2;
-}
-.img-frame{
-    position: relative;
-}
-.img-frame::after{
-    position: absolute;
-    display: block;
-    content: '';
-    background-color: var(--color-accent);
-    width: 100%;
-    height: 100%;
-    top: 10px;
-    left: 10px;
-    z-index: 0;
-}
-main > section > *{
-    z-index: 2;
-}
-
 .patinhas{
     position: absolute;
     width: 100%;

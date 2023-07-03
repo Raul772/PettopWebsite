@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
 
     if (form.checkValidity()) {
         const stored_User = await fetch(
-            `http://127.0.0.1:8000/users/${email.value}`
+            `http://127.0.0.1:8000/users/email/${email.value}`
         );
         const stored_User_Data = await stored_User.json();
 

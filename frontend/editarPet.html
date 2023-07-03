@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetTop - Editar Pet</title>
+    <link rel="shortcut icon" href="./src/media/paw.png" type="image/png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/cadastroPet.css">
+
+</head>
+
+<body>
+    <main>
+        <section class="container-fluid vh-100">
+            <div class="row h-100 justify-content-start">
+                <div class="col-md-5 d-flex flex-column justify-content-center align-items-center bg-default">
+                    <div id="login-tray" class="bg-default background-75"></div>
+                    <h1 class="h3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="100px" width="140px" viewBox="0 0 424.75 133.9">
+                        </svg>
+                    </h1>
+                    <form class="form-signin">
+                        <h2 class="h4 mb-3 font-weight-normal">Editar Pet</h2>
+
+                        <div class="form-group">
+                            <label for="petSelect">Selecione o Pet:</label>
+                            <select id="petSelect" class="form-control" required>
+                                <option value="1">Pet 1</option>
+                                <option value="2">Pet 2</option>
+                                <option value="3">Pet 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="petName">Nome do Pet:</label>
+                            <input type="text" id="petName" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="petAge">Idade do Pet:</label>
+                            <input type="number" id="petAge" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="petBreed">Raça do Pet:</label>
+                            <input type="text" id="petBreed" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="petSpecies">Espécie do Pet:</label>
+                            <input type="text" id="petSpecies" class="form-control" required>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="src/js/loginRequiredGlobal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
