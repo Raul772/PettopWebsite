@@ -25,7 +25,6 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: int
     is_active: bool
-    pets: list[Pet] = []
 
     class Config:
         orm_mode = True
