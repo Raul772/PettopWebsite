@@ -3,6 +3,14 @@ const email = document.querySelector("#email-input");
 const password = document.querySelector("#password-input");
 const validationMessage = document.querySelector("[validation-message]");
 
+async function storePets(id){
+    let petData = await fetch(`http://127.0.0.1:8000/pets/all/${id}`);
+    petData = await petData.json();
+    
+    localStorage["loggedUserPets"] = JSON.stringify(petData);
+}
+
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -18,7 +26,11 @@ form.addEventListener("submit", async (e) => {
         ) {
             localStorage["loggedUser"] = JSON.stringify(stored_User_Data);
             localStorage["logged"] = "true";
-            window.location.href = "./index.html";
+
+            storePets(stored_User_Data.id)
+            .then(window.location.href = "./index.html");
+            
+            
         } else {
             validationMessage.classList.remove("visually-hidden");
 

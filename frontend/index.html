@@ -198,60 +198,26 @@
 
         <section id="servicos" class="container p-5 d-flex flex-column justify-content-center align-items-center">
             <h2 class="font-accent mb-5">Nossos Serviços!</h2>
-            <article class="row justify-content-center align-items-center py-3">
-                <div class="col-md-5 mb-2">
-                    <div>
-                        <h3 class="font-primary fw-bold">Vacinação</h3>
+            <template>
+                <article class="row justify-content-center align-items-center py-3">
+                    <div class="col-md-5 mb-2">
+                        <div>
+                            <h3 service-card-title class="font-primary fw-bold">Vacinação</h3>
+                        </div>
+                        <p service-card-desc class="">
+                            Cuide do que te faz bem! Mantenha seu bichinho
+                            sempre saudável e protegido!
+                        </p>
+                        <a service-card-button class="btn btn-accent" href="agendamento.html?" role="button"
+                            require-login>Agendar</a>
                     </div>
-                    <p class="">
-                        Cuide do que te faz bem! Mantenha seu bichinho
-                        sempre saudável e protegido!
-                    </p>
-                    <span class="btn btn-accent" href="agendamento.html?v=vacinacao" role="button"
-                        require-login>Agendar</span>
-                </div>
-                <div class="col-md-3">
-                    <figure class="img-frame">
-                        <img class="img-fluid" src="src/media/services-vaccination.jpg" alt="Cachorro e gato." />
-                    </figure>
-                </div>
-            </article>
-            <article class="row justify-content-center align-items-center py-3">
-                <div class="col-md-5 mb-2">
-                    <div>
-                        <h3 class="font-primary fw-bold">Banho</h3>
+                    <div class="col-md-3">
+                        <figure class="img-frame">
+                            <img service-card-img class="img-fluid" src="src/media/services-vaccination.jpg" alt="Cachorro e gato." />
+                        </figure>
                     </div>
-                    <p class="">
-                        Uma boa higiene é muito importante, traga seu
-                        bichinho e leve-o limpinho e cheiroso!
-                    </p>
-                    <span class="btn btn-accent" href="agendamento.html?v=banho" role="button"
-                        require-login>Agendar</span>
-                </div>
-                <div class="col-md-3">
-                    <figure class="img-frame">
-                        <img class="img-fluid" src="src/media/services-bath.jpg" alt="Cachorro e gato." />
-                    </figure>
-                </div>
-            </article>
-            <article class="row justify-content-center align-items-center py-3">
-                <div class="col-md-5 mb-2">
-                    <div>
-                        <h3 class="font-primary fw-bold">Grooming</h3>
-                    </div>
-                    <p class="">
-                        A aparência também é importante né? Vamos cuidar
-                        para realçar a beleza e a fofura do seu amiguinho!
-                    </p>
-                    <span class="btn btn-accent" href="agendamento.html?v=grooming" role="button"
-                        require-login>Agendar</span>
-                </div>
-                <div class="col-md-3">
-                    <figure class="img-frame">
-                        <img class="img-fluid" src="src/media/services-grooming.jpg" alt="Cachorro e gato." />
-                    </figure>
-                </div>
-            </article>
+                </article>
+            </template>
         </section>
 
         <div style="overflow: hidden;">

@@ -16,6 +16,7 @@ if (logged) {
 const logout = () => {
     localStorage["logged"] = "false";
     localStorage["loggedUser"] = null;
+    localStorage["loggedUserPets"] = null;
     window.location.href = "./index.html";
 };
 

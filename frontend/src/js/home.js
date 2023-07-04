@@ -26,3 +26,28 @@ login_Required_Buttons.forEach((b) => {
         window.location.href = logged ? b.getAttribute("href") : "./login.html";
     });
 });
+
+
+
+// ------------------------------------------------------
+
+const serviceCard = document.querySelector("template").content;
+const servicesContainer = document.querySelector("#servicos");
+
+(async function getServices(){
+    let servicesData = await fetch(`http://127.0.0.1:8000/servicos`);
+    servicesData = await servicesData.json();
+    
+
+    servicesData.forEach(service => {
+
+        let aux = serviceCard.cloneNode(true);
+        aux.querySelector("[service-card-title]").innerText = service.nome;
+        aux.querySelector("[service-card-desc]").innerText = service.descricao;
+        // aux.querySelector("[service-card-img]").innerText = service.img;
+        aux.querySelector("[service-card-button]").href += service.id;
+
+        servicesContainer.appendChild(aux);
+    });
+
+})()
