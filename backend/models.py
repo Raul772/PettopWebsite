@@ -47,3 +47,4 @@ class Agendamento(Base):
     date = Column(DateTime)
     dono_id = Column(Integer, index=True)
     pet_id = Column(Integer, index=True)
+ 

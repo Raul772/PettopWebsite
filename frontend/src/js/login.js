@@ -27,7 +27,7 @@ form.addEventListener("submit", async (e) => {
             localStorage["loggedUser"] = JSON.stringify(stored_User_Data);
             localStorage["logged"] = "true";
 
-            storePets(stored_User_Data.id)
+            await storePets(stored_User_Data.id)
             .then(window.location.href = "./index.html");
             
             

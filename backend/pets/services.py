@@ -21,7 +21,12 @@ class PetService:
         return delete_data
 
     def create_pet(db: Session, pet: PetCreate, dono_id: int):
-        db_pet = Pet(nome=pet.nome, raca=pet.raca, dono_id=dono_id)
+        db_pet = Pet(nome=pet.nome, 
+                     raca=pet.raca, 
+                     dono_id=dono_id,
+                     tipo=pet.tipo,
+                     tamanho=pet.tamanho)
+
         db.add(db_pet)
         db.commit()
         db.refresh(db_pet)
