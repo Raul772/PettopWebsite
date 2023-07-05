@@ -12,13 +12,12 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="./src/css/global.css" />
-    
+
 </head>
 
 <body>
-    <!-- Landing Page -->
 
-    <nav class="navbar w-100 sticky-top navbar-expand-sm navbar-light bg-default">
+    <nav class="navbar position-absolute w-100 sticky-top navbar-expand-sm navbar-light bg-default">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" height="50px" width="70px" viewBox="0 0 424.75 133.9">
@@ -81,7 +80,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="./index.html" aria-current="page">Home<span
+                        <a class="nav-link active" href="#" aria-current="page">Home<span
                                 class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -96,6 +95,8 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
                             <a class="dropdown-item" href="./userProfile.html">Meu Perfil</a>
                             <a class="dropdown-item" href="./petProfile.html">Meus PETs</a>
+                            <a class="dropdown-item" href="./editarService.html">Editar Serviços</a>
+                            <a class="dropdown-item" href="./cadastroService.html">Cadastrar Serviço</a>
                             <a class="dropdown-item fw-bold" onclick="logout();" href="#">Sair</a>
                         </div>
                     </li>
@@ -129,7 +130,8 @@
             <div class="row flex-column justify-content-center align-items-center">
                 <div class="col-sm-4">
                     <figure class="img-frame">
-                        <img profile-picture class="img-fluid" src="src/media/user-profile-photo.jpg" alt="Foto de Perfil." />
+                        <img profile-picture class="img-fluid" src="src/media/user-profile-photo.jpg"
+                            alt="Foto de Perfil." />
                     </figure>
                 </div>
                 <div class="col-sm-6 py-5 d-flex flex-column justify-content-center align-items-center">

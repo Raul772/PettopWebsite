@@ -1,20 +1,25 @@
 const petSelection = document.querySelector("[pet-select]");
-const loggedUserPets =
-    localStorage["loggedUserPets"] &&
-    JSON.parse(localStorage["loggedUserPets"]);
-
 const loggedUser =
     localStorage["loggedUser"] &&
     JSON.parse(localStorage["loggedUser"]);
 
-loggedUserPets.forEach(pet => {
+let loggedUserPets;
+(async function getUserPets(){
+    loggedUserPets = await fetch(
+        `http://127.0.0.1:8000/pets/all/${loggedUser.id}`
+      );
+    loggedUserPets = await loggedUserPets.json();
 
-    let aux = document.createElement("option");
-    aux.setAttribute("value", pet.id);
-    aux.innerText = pet.nome;
+    loggedUserPets.forEach(pet => {
+        let aux = document.createElement("option");
+        aux.setAttribute("value", pet.id);
+        aux.innerText = pet.nome;
+    
+        petSelection.appendChild(aux);
+    });
 
-    petSelection.appendChild(aux);
-});
+})();
+
 
 const serviceId = window.location.href.slice(window.location.href.lastIndexOf("?") + 1);
 (async function getService() {
@@ -24,13 +29,10 @@ const serviceId = window.location.href.slice(window.location.href.lastIndexOf("?
 
     // document.querySelector("[service-card-img]").src = service.img;
     document.querySelector("[servico-title]").value = service.nome;
-})()
-
-
+})();
 
 const petSelected = document.querySelector("#pet-select");
 const dataAgendamento = document.querySelector("#data");
-
 
 document.querySelector("form")
     .addEventListener("submit",

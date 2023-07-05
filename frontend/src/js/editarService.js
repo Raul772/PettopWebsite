@@ -3,6 +3,8 @@ const serviceNameField = document.querySelector("#service-name");
 const serviceDescField = document.querySelector("#service-description");
 const servicePriceField = document.querySelector("#service-price");
 
+const deleteButton = document.querySelector("[delete-service]");
+
 let servicesList;
 
 (async function getServices() {
@@ -27,16 +29,12 @@ const updateFields = (e) => {
   e = typeof (e) === "undefined" ? 0 : e.target.value - 1;
 
   serviceNameField.value = servicesList[e].nome;
-
   serviceDescField.value = servicesList[e].descricao;
-
   servicePriceField.value = servicesList[e].valor;
-
-
+  deleteButton.setAttribute("delete-service", servicesList[e].id);
 }
 
 serviceSelection.addEventListener("change", updateFields);
-
 
 document.querySelector("form")
   .addEventListener("submit",
@@ -59,3 +57,11 @@ document.querySelector("form")
 
       window.location.href = "./index.html#servicos";
     });
+
+deleteButton.addEventListener("click", async () => {
+
+  const deleteServiceRequest = await fetch(`http://127.0.0.1:8000/servicos/${deleteButton.getAttribute("delete-service")}`,
+  {
+    method: "DELETE"
+  }).then(window.location.href = "./index.html#servicos");
+})

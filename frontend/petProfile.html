@@ -2,23 +2,22 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetTop Shop - Tudo para o seu Pet!</title>
-		<link rel="shortcut icon" href="./src/media/paw.png" type="image/png" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PetTop Shop - Tudo para o seu Pet!</title>
+	<link rel="shortcut icon" href="./src/media/paw.png" type="image/png" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./src/css/global.css" />
+	<link rel="stylesheet" href="./src/css/global.css" />
 
 <body>
-    <!-- Landing Page -->
 
-    <nav class="navbar position-absolute w-100 sticky-top navbar-expand-sm navbar-light bg-default">
+	<nav class="navbar position-absolute w-100 sticky-top navbar-expand-sm navbar-light bg-default">
 		<div class="container">
-			<a class="navbar-brand" href="./index.html#">
+			<a class="navbar-brand" href="#">
 				<svg xmlns="http://www.w3.org/2000/svg" height="50px" width="70px" viewBox="0 0 424.75 133.9">
 					<defs>
 						<style>
@@ -79,7 +78,7 @@
 			<div class="collapse navbar-collapse" id="collapsibleNavId">
 				<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" href="./index.html#" aria-current="page">Home<span
+						<a class="nav-link active" href="#" aria-current="page">Home<span
 								class="visually-hidden">(current)</span></a>
 					</li>
 					<li class="nav-item">
@@ -94,6 +93,8 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownId">
 							<a class="dropdown-item" href="./userProfile.html">Meu Perfil</a>
 							<a class="dropdown-item" href="./petProfile.html">Meus PETs</a>
+							<a class="dropdown-item" href="./editarService.html">Editar Serviços</a>
+							<a class="dropdown-item" href="./cadastroService.html">Cadastrar Serviço</a>
 							<a class="dropdown-item fw-bold" onclick="logout();" href="#">Sair</a>
 						</div>
 					</li>
@@ -108,64 +109,67 @@
 		</div>
 	</nav>
 
-    <main class="bg-default min-vh-100">
+	<main class="bg-default min-vh-100">
 
-        <div style="overflow: hidden">
-            <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" style="
+		<div style="overflow: hidden">
+			<svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" style="
                         fill: var(--color-primary);
                         width: 209%;
                         height: 108px;
                     ">
-                <path d="M1200 120L0 16.48V0h1200v120z" />
-            </svg>
-        </div>
+				<path d="M1200 120L0 16.48V0h1200v120z" />
+			</svg>
+		</div>
 
-        <section class="container p-5 d-flex flex-column">
-            <div class="row mb-3 justify-content-center align-items-center">
-                <h2 class="font-accent text-center">Meus Pets</h2>
-            </div>
-
-
-            <div class="w-100 d-flex justify-content-center mb-4">
-                <a class="btn btn-primary fw-bold" href="./cadastroPet.html">Adicionar PET</a>
-            </div>
+		<section class="container p-5 d-flex flex-column">
+			<div class="row mb-3 justify-content-center align-items-center">
+				<h2 class="font-accent text-center">Meus Pets</h2>
+			</div>
 
 
-            <div pet-list class="row flex-column justify-content-center align-items-center">
-                <template>
-                    <div
-                        class="col-md-8 d-flex flex-column justify-content-center align-items-end border-2 border-bottom border-primary p-3">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-sm-9 col-md-3 p-3">
-                                <figure class="img-frame">
-                                    <img class="img-fluid" src="src/media/index-header.jpg" alt="Cachorro e gato." />
-                                </figure>
-                            </div>
-                            <div class="col">
-                                <p><strong>Nome:</strong> <span nome-pet></span></p>
-                                <p><strong>Tipo:</strong> <span tipo-pet></span></p>
-                                <p><strong>Raça:</strong> <span raca-pet></span></p>
-                            </div>
-                            <div class="col">
-                                <p><strong>Tamanho:</strong> <span tam-pet></span></p>
-                            </div>
-                        </div>
-                        <a pet-editar class="btn btn-accent" href="./editarPet.html?">Editar</a>
-                    </div>
-                </template>
-            </div>
-        </section>        
-        <p class="d-inline-block w-100 text-center">
-            DigitalBridge &copy; 2023
-        </p>
-    </main>
-    
-    <script src="src/js/loginRequiredGlobal.js"></script>
-    <script src="./src/js/petProfile.js"></script>
+			<div class="w-100 d-flex justify-content-center mb-4">
+				<a class="btn btn-primary fw-bold" href="./cadastroPet.html">Adicionar PET</a>
+			</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+
+			<div pet-list class="row flex-column justify-content-center align-items-center">
+				<template>
+					<div
+						class="col-md-8 d-flex flex-column justify-content-center align-items-end border-2 border-bottom border-primary p-3">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-sm-9 col-md-3 p-3">
+								<figure class="img-frame">
+									<img class="img-fluid" src="src/media/index-header.jpg" alt="Cachorro e gato." />
+								</figure>
+							</div>
+							<div class="col">
+								<p><strong>Nome:</strong> <span nome-pet></span></p>
+								<p><strong>Tipo:</strong> <span tipo-pet></span></p>
+								<p><strong>Raça:</strong> <span raca-pet></span></p>
+							</div>
+							<div class="col">
+								<p><strong>Tamanho:</strong> <span tam-pet></span></p>
+							</div>
+						</div>
+						<div>
+							<a pet-editar class="btn btn-primary" href="./editarPet.html?">Editar</a>
+							<button pet-delete="" class="btn btn-accent">Delete</button>
+						</div>
+					</div>
+				</template>
+			</div>
+		</section>
+		<p class="d-inline-block w-100 text-center">
+			DigitalBridge &copy; 2023
+		</p>
+	</main>
+
+	<script src="src/js/loginRequiredGlobal.js"></script>
+	<script src="./src/js/petProfile.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>

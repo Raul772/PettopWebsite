@@ -2,24 +2,24 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetTop - Cadastro de Pet</title>
-    <link rel="shortcut icon" href="./src/media/paw.png" type="image/png">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PetTop - Cadastro de Pet</title>
+	<link rel="shortcut icon" href="./src/media/paw.png" type="image/png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./src/css/global.css">
+	<link rel="stylesheet" href="./src/css/global.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar position-absolute w-100 sticky-top navbar-expand-sm navbar-light bg-default">
+	<nav class="navbar position-absolute w-100 sticky-top navbar-expand-sm navbar-light bg-default">
 		<div class="container">
-			<a class="navbar-brand" href="./index.html#">
+			<a class="navbar-brand" href="#">
 				<svg xmlns="http://www.w3.org/2000/svg" height="50px" width="70px" viewBox="0 0 424.75 133.9">
 					<defs>
 						<style>
@@ -80,7 +80,7 @@
 			<div class="collapse navbar-collapse" id="collapsibleNavId">
 				<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" href="./index.html#" aria-current="page">Home<span
+						<a class="nav-link active" href="#" aria-current="page">Home<span
 								class="visually-hidden">(current)</span></a>
 					</li>
 					<li class="nav-item">
@@ -95,6 +95,8 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownId">
 							<a class="dropdown-item" href="./userProfile.html">Meu Perfil</a>
 							<a class="dropdown-item" href="./petProfile.html">Meus PETs</a>
+							<a class="dropdown-item" href="./editarService.html">Editar Serviços</a>
+							<a class="dropdown-item" href="./cadastroService.html">Cadastrar Serviço</a>
 							<a class="dropdown-item fw-bold" onclick="logout();" href="#">Sair</a>
 						</div>
 					</li>
@@ -109,44 +111,44 @@
 		</div>
 	</nav>
 
-    <main class="bg-default">
-        <section class="container vh-100">
-            <div class="mt-5 row  justify-content-center">
-                <h2 class="font-accent text-center mt-5">Cadastrar Pet</h2>
-                <div class="col-md-6">
-                    <form type="submit" class="form-signin">
-                        <div class="form-group py-1">
-                            <label for="petName">Nome do Pet:</label>
-                            <input pet-name type="text" id="petName" class="form-control" required>
-                        </div>
+	<main class="bg-default">
+		<section class="container vh-100">
+			<div class="mt-5 row  justify-content-center">
+				<h2 class="font-accent text-center mt-5">Cadastrar Pet</h2>
+				<div class="col-md-6">
+					<form type="submit" class="form-signin">
+						<div class="form-group py-1">
+							<label for="petName">Nome do Pet:</label>
+							<input pet-name type="text" id="petName" class="form-control" required>
+						</div>
 
-                        <div class="form-group py-1">
-                            <label for="petSize">Tipo do Pet:</label>
-                            <input pet-type type="text" id="petSize" class="form-control" required>
-                        </div>
+						<div class="form-group py-1">
+							<label for="petSize">Tipo do Pet:</label>
+							<input pet-type type="text" id="petSize" class="form-control" required>
+						</div>
 
-                        <div class="form-group py-1">
-                            <label for="petBreed">Raça do Pet:</label>
-                            <input pet-breed type="text" id="petBreed" class="form-control" required>
-                        </div>
+						<div class="form-group py-1">
+							<label for="petBreed">Raça do Pet:</label>
+							<input pet-breed type="text" id="petBreed" class="form-control" required>
+						</div>
 
-                        <div class="form-group py-1">
-                            <label for="petSize">Tamanho do Pet:</label>
-                            <input pet-size type="text" id="petSize" class="form-control" required>
-                        </div>
+						<div class="form-group py-1">
+							<label for="petSize">Tamanho do Pet:</label>
+							<input pet-size type="text" id="petSize" class="form-control" required>
+						</div>
 
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
 
-    <script src="./src/js/loginRequiredGlobal.js"></script>
-    <script src="./src/js/cadastroPet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+	<script src="./src/js/loginRequiredGlobal.js"></script>
+	<script src="./src/js/cadastroPet.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -33,5 +33,5 @@ def create(key, data: PetCreate, db: Session = Depends(get_db)):
 
 
 @petsRouter.delete("/{key}", status_code=status.HTTP_200_OK)
-def create(key, db: Session = Depends(get_db)):
+def delete(key, db: Session = Depends(get_db)):
     return PetService.delete_pet(db=db, pet_id=key)
