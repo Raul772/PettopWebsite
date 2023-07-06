@@ -6,7 +6,7 @@ const loggedUser =
 let loggedUserPets;
 (async function getUserPets(){
     loggedUserPets = await fetch(
-        `http://127.0.0.1:8000/pets/all/${loggedUser.id}`
+        `https://pettopwebsite-production.up.railway.app/pets/all/${loggedUser.id}`
       );
     loggedUserPets = await loggedUserPets.json();
 
@@ -24,7 +24,7 @@ let loggedUserPets;
 const serviceId = window.location.href.slice(window.location.href.lastIndexOf("?") + 1);
 (async function getService() {
 
-    let service = await fetch(`http://127.0.0.1:8000/servicos/${serviceId}`);
+    let service = await fetch(`https://pettopwebsite-production.up.railway.app/servicos/${serviceId}`);
     service = await service.json();
 
     // document.querySelector("[service-card-img]").src = service.img;
@@ -48,7 +48,7 @@ document.querySelector("form")
             });
 
             const agendamentoRequest = await fetch(
-                "http://127.0.0.1:8000/agendamento",
+                "https://pettopwebsite-production.up.railway.app/agendamento",
                 {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},

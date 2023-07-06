@@ -4,7 +4,7 @@ const password = document.querySelector("#password-input");
 const validationMessage = document.querySelector("[validation-message]");
 
 async function storePets(id){
-    let petData = await fetch(`http://127.0.0.1:8000/pets/all/${id}`);
+    let petData = await fetch(`https://pettopwebsite-production.up.railway.app/pets/all/${id}`);
     petData = await petData.json();
     
     localStorage["loggedUserPets"] = JSON.stringify(petData);
@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
 
     if (form.checkValidity()) {
         const stored_User = await fetch(
-            `http://127.0.0.1:8000/users/email/${email.value}`
+            `https://pettopwebsite-production.up.railway.app/users/email/${email.value}`
         );
         const stored_User_Data = await stored_User.json();
 

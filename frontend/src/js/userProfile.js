@@ -9,7 +9,7 @@ const user_profile_picure = document.querySelector("[profile-picture]");
 
 
 (async function getPetNumber(){
-  let petData = await fetch(`http://127.0.0.1:8000/pets/all/${user.id}`);
+  let petData = await fetch(`https://pettopwebsite-production.up.railway.app/pets/all/${user.id}`);
   petData = await petData.json();
   user_pets_field.innerText = petData.length;
 })()

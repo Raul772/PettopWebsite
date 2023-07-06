@@ -5,7 +5,7 @@ const loggedUser =
 
 (async function getPets() {
   const petData = await fetch(
-    `http://127.0.0.1:8000/pets/all/${loggedUser.id}`
+    `https://pettopwebsite-production.up.railway.app/pets/all/${loggedUser.id}`
   );
   const petList = await petData.json();
 
@@ -20,7 +20,7 @@ const loggedUser =
     deleteButton.setAttribute("pet-delete", pet.id);
     deleteButton.addEventListener("click", async (e) => {
       const petId = e.target.getAttribute("pet-delete");
-      await fetch(`http://127.0.0.1:8000/pets/${petId}`, {
+      await fetch(`https://pettopwebsite-production.up.railway.app/pets/${petId}`, {
         method: "DELETE",
       }).then( () => {
           window.location.reload()

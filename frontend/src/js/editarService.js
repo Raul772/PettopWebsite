@@ -9,7 +9,7 @@ let servicesList;
 
 (async function getServices() {
 
-  servicesList = await fetch("http://127.0.0.1:8000/servicos/");
+  servicesList = await fetch("https://pettopwebsite-production.up.railway.app/servicos/");
   servicesList = await servicesList.json();
 
   servicesList.forEach(service => {
@@ -48,7 +48,7 @@ document.querySelector("form")
         descricao: serviceDescField.value
       })
 
-      const serviceUpdateRequest = await fetch(`http://127.0.0.1:8000/servicos/${serviceSelection.value}`,
+      const serviceUpdateRequest = await fetch(`https://pettopwebsite-production.up.railway.app/servicos/${serviceSelection.value}`,
         {
           method: 'PATCH',
           headers: { "Content-Type": "application/json" },
@@ -60,7 +60,7 @@ document.querySelector("form")
 
 deleteButton.addEventListener("click", async () => {
 
-  const deleteServiceRequest = await fetch(`http://127.0.0.1:8000/servicos/${deleteButton.getAttribute("delete-service")}`,
+  const deleteServiceRequest = await fetch(`https://pettopwebsite-production.up.railway.app/servicos/${deleteButton.getAttribute("delete-service")}`,
   {
     method: "DELETE"
   }).then(window.location.href = "./index.html#servicos");

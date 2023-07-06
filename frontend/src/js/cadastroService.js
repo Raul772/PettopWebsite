@@ -14,7 +14,7 @@ form.addEventListener("submit", async (e) => {
   });
 
   const serviceCadastroRequest = await fetch(
-    "http://127.0.0.1:8000/servicos/cadastro",
+    "https://pettopwebsite-production.up.railway.app/servicos/cadastro",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -20,7 +20,7 @@ form.addEventListener("submit",
             
 
             try {
-                await fetch("http://127.0.0.1:8000/users/cadastro", {
+                await fetch("https://pettopwebsite-production.up.railway.app/users/cadastro", {
                     method: "POST",
                     body: JSON.stringify({ 
                         email: values.email,

@@ -15,7 +15,7 @@ const petId = window.location.href.slice(window.location.href.lastIndexOf("?") +
 
 (async function getServices() {
 
-  petOriginal = await fetch(`http://127.0.0.1:8000/pets/one/${petId}`);
+  petOriginal = await fetch(`https://pettopwebsite-production.up.railway.app/pets/one/${petId}`);
   petOriginal = await petOriginal.json();
 
   updateFields();
@@ -44,14 +44,14 @@ form.addEventListener("submit",
     });
 
 
-    let editPetRequest = await fetch(`http://127.0.0.1:8000/pets/${petId}`,
+    let editPetRequest = await fetch(`https://pettopwebsite-production.up.railway.app/pets/${petId}`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: pet
       });
 
-    editPetRequest = await fetch(`http://127.0.0.1:8000/pets/all/${loggedUser.id}`);
+    editPetRequest = await fetch(`https://pettopwebsite-production.up.railway.app/pets/all/${loggedUser.id}`);
     editPetRequest = await editPetRequest.json();
 
     localStorage["loggedUserPets"] = JSON.stringify(editPetRequest);

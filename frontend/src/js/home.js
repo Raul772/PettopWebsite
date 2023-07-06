@@ -36,7 +36,7 @@ const serviceCard = document.querySelector("template").content;
 const servicesContainer = document.querySelector("#servicos");
 
 (async function getServices(){
-    let servicesData = await fetch(`http://127.0.0.1:8000/servicos`);
+    let servicesData = await fetch(`https://pettopwebsite-production.up.railway.app/servicos`);
     servicesData = await servicesData.json();
 
     servicesData.forEach(service => {

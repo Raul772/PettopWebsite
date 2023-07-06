@@ -21,14 +21,14 @@ form.addEventListener("submit",
       tamanho: petSizeField.value
     });
 
-    let cadastroPetRequest = await fetch(`http://127.0.0.1:8000/pets/cadastro/${loggedUser.id}`,
+    let cadastroPetRequest = await fetch(`https://pettopwebsite-production.up.railway.app/pets/cadastro/${loggedUser.id}`,
       {
         method: "POST",
         headers: { "Content-Type":"application/json" },
         body: pet
       });
 
-    cadastroPetRequest = await fetch(`http://127.0.0.1:8000/pets/all/${loggedUser.id}`);
+    cadastroPetRequest = await fetch(`https://pettopwebsite-production.up.railway.app/pets/all/${loggedUser.id}`);
     cadastroPetRequest = await cadastroPetRequest.json();
 
     localStorage["loggedUserPets"] = JSON.stringify(cadastroPetRequest);
