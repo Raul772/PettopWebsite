@@ -1,3 +1,5 @@
+import show from "./popup.js";
+
 const petSelection = document.querySelector("[pet-select]");
 const loggedUser =
     localStorage["loggedUser"] &&
@@ -55,6 +57,6 @@ document.querySelector("form")
                     body: agendamento, 
                 });
                     
-            // window.location.href = "./userAgendamentos.html";
+            show();
         });
 

@@ -110,3 +110,10 @@ img{
     left: 10px;
     z-index: 0;
 }
+
+[modal-popup]{
+    top: -50%;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 99999;
+}

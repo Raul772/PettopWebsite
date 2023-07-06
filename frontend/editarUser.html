@@ -115,23 +115,23 @@
             <div class="col-md-6">
                 <form type="submit">
                     <div class="mb-3">
-                        <label for="service-name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="user-name" placeholder="">
+                        <label for="user-name" class="form-label">Nome</label>
+                        <input user-name type="text" pattern="[A-Za-z0-9]{1,10}" class="form-control" id="user-name">
                     </div>
                     <div class="mb-3">
-                        <label for="service-description" class="form-label">E-mail</label>
-                        <input type="text" class="form-control" id="user-email" placeholder="">
+                        <label for="user-email" class="form-label">E-mail</label>
+                        <input user-email type="email" class="form-control" id="user-email">
                     </div>
                     <div class="mb-3">
-                        <label for="service-price" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" id="user-adress" placeholder="">
+                        <label for="user-address" class="form-label">Endereço</label>
+                        <input user-address type="text" class="form-control" id="user-address">
                     </div>
                     <div class="mb-3">
-                        <label for="service-price" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" id="user-phone" placeholder="">
+                        <label for="user-phone" class="form-label">Telefone</label>
+                        <input user-phone type="tel" class="form-control" id="user-phone">
                     </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>
-                    <button delete-service type="button" class="btn btn-accent">Cancelar</button>
+                    <a href="./userProfile.html" class="btn btn-accent">Cancelar</a>
                 </form>
             </div>
         </div>
